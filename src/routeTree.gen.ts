@@ -9,27 +9,246 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TechnologyRouteImport } from './routes/technology'
+import { Route as DestinationRouteImport } from './routes/destination'
+import { Route as CrewRouteImport } from './routes/crew'
+import { Route as TechnologyIndexRouteImport } from './routes/technology/index'
+import { Route as DestinationIndexRouteImport } from './routes/destination/index'
+import { Route as CrewIndexRouteImport } from './routes/crew/index'
+import { Route as TechnologyTechnologyIdRouteImport } from './routes/technology/$technologyId'
+import { Route as DestinationDestinationIdRouteImport } from './routes/destination/$destinationId'
+import { Route as CrewCrewIdRouteImport } from './routes/crew/$crewId'
 
-export interface FileRoutesByFullPath {}
-export interface FileRoutesByTo {}
+const TechnologyRoute = TechnologyRouteImport.update({
+  id: '/technology',
+  path: '/technology',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DestinationRoute = DestinationRouteImport.update({
+  id: '/destination',
+  path: '/destination',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CrewRoute = CrewRouteImport.update({
+  id: '/crew',
+  path: '/crew',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TechnologyIndexRoute = TechnologyIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => TechnologyRoute,
+} as any)
+const DestinationIndexRoute = DestinationIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DestinationRoute,
+} as any)
+const CrewIndexRoute = CrewIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CrewRoute,
+} as any)
+const TechnologyTechnologyIdRoute = TechnologyTechnologyIdRouteImport.update({
+  id: '/$technologyId',
+  path: '/$technologyId',
+  getParentRoute: () => TechnologyRoute,
+} as any)
+const DestinationDestinationIdRoute =
+  DestinationDestinationIdRouteImport.update({
+    id: '/$destinationId',
+    path: '/$destinationId',
+    getParentRoute: () => DestinationRoute,
+  } as any)
+const CrewCrewIdRoute = CrewCrewIdRouteImport.update({
+  id: '/$crewId',
+  path: '/$crewId',
+  getParentRoute: () => CrewRoute,
+} as any)
+
+export interface FileRoutesByFullPath {
+  '/crew': typeof CrewRouteWithChildren
+  '/destination': typeof DestinationRouteWithChildren
+  '/technology': typeof TechnologyRouteWithChildren
+  '/crew/$crewId': typeof CrewCrewIdRoute
+  '/destination/$destinationId': typeof DestinationDestinationIdRoute
+  '/technology/$technologyId': typeof TechnologyTechnologyIdRoute
+  '/crew/': typeof CrewIndexRoute
+  '/destination/': typeof DestinationIndexRoute
+  '/technology/': typeof TechnologyIndexRoute
+}
+export interface FileRoutesByTo {
+  '/crew/$crewId': typeof CrewCrewIdRoute
+  '/destination/$destinationId': typeof DestinationDestinationIdRoute
+  '/technology/$technologyId': typeof TechnologyTechnologyIdRoute
+  '/crew': typeof CrewIndexRoute
+  '/destination': typeof DestinationIndexRoute
+  '/technology': typeof TechnologyIndexRoute
+}
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/crew': typeof CrewRouteWithChildren
+  '/destination': typeof DestinationRouteWithChildren
+  '/technology': typeof TechnologyRouteWithChildren
+  '/crew/$crewId': typeof CrewCrewIdRoute
+  '/destination/$destinationId': typeof DestinationDestinationIdRoute
+  '/technology/$technologyId': typeof TechnologyTechnologyIdRoute
+  '/crew/': typeof CrewIndexRoute
+  '/destination/': typeof DestinationIndexRoute
+  '/technology/': typeof TechnologyIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: never
+  fullPaths:
+    | '/crew'
+    | '/destination'
+    | '/technology'
+    | '/crew/$crewId'
+    | '/destination/$destinationId'
+    | '/technology/$technologyId'
+    | '/crew/'
+    | '/destination/'
+    | '/technology/'
   fileRoutesByTo: FileRoutesByTo
-  to: never
-  id: '__root__'
+  to:
+    | '/crew/$crewId'
+    | '/destination/$destinationId'
+    | '/technology/$technologyId'
+    | '/crew'
+    | '/destination'
+    | '/technology'
+  id:
+    | '__root__'
+    | '/crew'
+    | '/destination'
+    | '/technology'
+    | '/crew/$crewId'
+    | '/destination/$destinationId'
+    | '/technology/$technologyId'
+    | '/crew/'
+    | '/destination/'
+    | '/technology/'
   fileRoutesById: FileRoutesById
 }
-export interface RootRouteChildren {}
-
-declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {}
+export interface RootRouteChildren {
+  CrewRoute: typeof CrewRouteWithChildren
+  DestinationRoute: typeof DestinationRouteWithChildren
+  TechnologyRoute: typeof TechnologyRouteWithChildren
 }
 
-const rootRouteChildren: RootRouteChildren = {}
+declare module '@tanstack/react-router' {
+  interface FileRoutesByPath {
+    '/technology': {
+      id: '/technology'
+      path: '/technology'
+      fullPath: '/technology'
+      preLoaderRoute: typeof TechnologyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/destination': {
+      id: '/destination'
+      path: '/destination'
+      fullPath: '/destination'
+      preLoaderRoute: typeof DestinationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/crew': {
+      id: '/crew'
+      path: '/crew'
+      fullPath: '/crew'
+      preLoaderRoute: typeof CrewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/technology/': {
+      id: '/technology/'
+      path: '/'
+      fullPath: '/technology/'
+      preLoaderRoute: typeof TechnologyIndexRouteImport
+      parentRoute: typeof TechnologyRoute
+    }
+    '/destination/': {
+      id: '/destination/'
+      path: '/'
+      fullPath: '/destination/'
+      preLoaderRoute: typeof DestinationIndexRouteImport
+      parentRoute: typeof DestinationRoute
+    }
+    '/crew/': {
+      id: '/crew/'
+      path: '/'
+      fullPath: '/crew/'
+      preLoaderRoute: typeof CrewIndexRouteImport
+      parentRoute: typeof CrewRoute
+    }
+    '/technology/$technologyId': {
+      id: '/technology/$technologyId'
+      path: '/$technologyId'
+      fullPath: '/technology/$technologyId'
+      preLoaderRoute: typeof TechnologyTechnologyIdRouteImport
+      parentRoute: typeof TechnologyRoute
+    }
+    '/destination/$destinationId': {
+      id: '/destination/$destinationId'
+      path: '/$destinationId'
+      fullPath: '/destination/$destinationId'
+      preLoaderRoute: typeof DestinationDestinationIdRouteImport
+      parentRoute: typeof DestinationRoute
+    }
+    '/crew/$crewId': {
+      id: '/crew/$crewId'
+      path: '/$crewId'
+      fullPath: '/crew/$crewId'
+      preLoaderRoute: typeof CrewCrewIdRouteImport
+      parentRoute: typeof CrewRoute
+    }
+  }
+}
+
+interface CrewRouteChildren {
+  CrewCrewIdRoute: typeof CrewCrewIdRoute
+  CrewIndexRoute: typeof CrewIndexRoute
+}
+
+const CrewRouteChildren: CrewRouteChildren = {
+  CrewCrewIdRoute: CrewCrewIdRoute,
+  CrewIndexRoute: CrewIndexRoute,
+}
+
+const CrewRouteWithChildren = CrewRoute._addFileChildren(CrewRouteChildren)
+
+interface DestinationRouteChildren {
+  DestinationDestinationIdRoute: typeof DestinationDestinationIdRoute
+  DestinationIndexRoute: typeof DestinationIndexRoute
+}
+
+const DestinationRouteChildren: DestinationRouteChildren = {
+  DestinationDestinationIdRoute: DestinationDestinationIdRoute,
+  DestinationIndexRoute: DestinationIndexRoute,
+}
+
+const DestinationRouteWithChildren = DestinationRoute._addFileChildren(
+  DestinationRouteChildren,
+)
+
+interface TechnologyRouteChildren {
+  TechnologyTechnologyIdRoute: typeof TechnologyTechnologyIdRoute
+  TechnologyIndexRoute: typeof TechnologyIndexRoute
+}
+
+const TechnologyRouteChildren: TechnologyRouteChildren = {
+  TechnologyTechnologyIdRoute: TechnologyTechnologyIdRoute,
+  TechnologyIndexRoute: TechnologyIndexRoute,
+}
+
+const TechnologyRouteWithChildren = TechnologyRoute._addFileChildren(
+  TechnologyRouteChildren,
+)
+
+const rootRouteChildren: RootRouteChildren = {
+  CrewRoute: CrewRouteWithChildren,
+  DestinationRoute: DestinationRouteWithChildren,
+  TechnologyRoute: TechnologyRouteWithChildren,
+}
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
