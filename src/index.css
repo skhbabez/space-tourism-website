@@ -1,1 +1,95 @@
 @import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+  --color-blue-900: #0b0d17;
+  --color-blue-300: #d0d6f9;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --text-*: initial;
+  --text-1: 9rem;
+  --text-1--line-height: 171.9%;
+  --text-1--letter-spacing: normal;
+  --text-1--font-weight: 400;
+
+  --text-2: 6.25rem;
+  --text-2--line-height: 114.6%;
+  --text-2--letter-spacing: normal;
+  --text-2--font-weight: 400;
+
+  --text-3: 3.5rem;
+  --text-3--line-height: 64.2%;
+  --text-3--letter-spacing: normal;
+  --text-3--font-weight: 400;
+
+  --text-4: 2rem;
+  --text-4--line-height: 36.7%;
+  --text-4--letter-spacing: normal;
+  --text-4--font-weight: 400;
+
+  --text-5: 1.75rem;
+  --text-5--line-height: 33.6%;
+  --text-5--letter-spacing: 0.25rem;
+  --text-5--font-weight: 400;
+
+  --text-6: 1.75rem;
+  --text-6--line-height: 32.1%;
+  --text-6--letter-spacing: normal;
+  --text-6--font-weight: 400;
+
+  --text-7: 0.875rem;
+  --text-7--line-height: 16.8%;
+  --text-7--letter-spacing: 0.125rem;
+  --text-7--font-weight: 400;
+
+  --text-8: 1rem;
+  --text-8--line-height: 19.2%;
+  --text-8--letter-spacing: 0.125rem;
+  --text-8--font-weight: 400;
+
+  --text-9: 1.125rem;
+  --text-9--line-height: 180%;
+  --text-9--letter-spacing: normal;
+  --text-9--font-weight: 400;
+
+  --font-*: initial;
+  --font-barlow: "Barlow" sans-serif;
+  --font-barlow-condensed: "Barlow Condensed" sans-serif;
+  --font-barlow: "Bellefair" sans-serif;
+}
+
+@layer base {
+  @font-face {
+    font-family: "Barlow";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Barlow") url("/fonts/Barlow/Barlow-Regular.ttf")
+      format("truetype");
+  }
+
+  @font-face {
+    font-family: "Barlow Condensed";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Barlow Condensed")
+      url("/fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf")
+      format("truetype");
+  }
+
+  @font-face {
+    font-family: "Barlow Condensed";
+    font-style: bold;
+    font-weight: 700;
+    src: local("Barlow Condensed")
+      url("/fonts/Barlow_Condensed/BarlowCondensed-bold.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Bellefair";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Bellefair") url("/fonts/Bellefair/Bellefair-Regular.ttf")
+      format("truetype");
+  }
+}
