@@ -54,9 +54,9 @@
   --text-9--font-weight: 400;
 
   --font-*: initial;
-  --font-barlow: "Barlow" sans-serif;
-  --font-barlow-condensed: "Barlow Condensed" sans-serif;
-  --font-barlow: "Bellefair" sans-serif;
+  --font-barlow: "Barlow", sans-serif;
+  --font-barlow-condensed: "Barlow Condensed", sans-serif;
+  --font-bellefair: "Bellefair", sans-serif;
 }
 
 @layer base {
@@ -64,24 +64,27 @@
     font-family: "Barlow";
     font-style: normal;
     font-weight: 400;
-    src: local("Barlow") url("/fonts/Barlow/Barlow-Regular.ttf")
-      format("truetype");
+    src:
+      local("Barlow"),
+      url("/fonts/Barlow/Barlow-Regular.ttf") format("truetype");
   }
 
   @font-face {
     font-family: "Barlow Condensed";
     font-style: normal;
     font-weight: 400;
-    src: local("Barlow Condensed")
+    src:
+      local("Barlow Condensed"),
       url("/fonts/Barlow_Condensed/BarlowCondensed-Regular.ttf")
-      format("truetype");
+        format("truetype");
   }
 
   @font-face {
     font-family: "Barlow Condensed";
-    font-style: bold;
+    font-style: normal;
     font-weight: 700;
-    src: local("Barlow Condensed")
+    src:
+      local("Barlow Condensed"),
       url("/fonts/Barlow_Condensed/BarlowCondensed-bold.ttf") format("truetype");
   }
 
@@ -89,7 +92,26 @@
     font-family: "Bellefair";
     font-style: normal;
     font-weight: 400;
-    src: local("Bellefair") url("/fonts/Bellefair/Bellefair-Regular.ttf")
-      format("truetype");
+    src:
+      local("Bellefair"),
+      url("/fonts/Bellefair/Bellefair-Regular.ttf") format("truetype");
+  }
+}
+
+@layer components {
+  @counter-style nav-list {
+    system: extends decimal;
+    pad: 2 "0";
+    suffix: "";
+    speak-as: numbers;
+  }
+
+  ol.nav-list-style {
+    list-style: nav-list inside;
+    & > li::marker {
+      letter-spacing: 0.16875rem;
+      font-weight: 700;
+      color: var(--color-white);
+    }
   }
 }
