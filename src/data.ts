@@ -37,16 +37,11 @@ interface Data {
   technology: Technology[];
 }
 
-// we mock an api
+// We mock an api. Mostly to test out tanstacks caching mechanism.
 const fetchData = async (): Promise<Data> => {
-  const cachedData = localStorage.getItem("data");
-  if (cachedData) {
-    return JSON.parse(cachedData);
-  }
   const response = await fetch("/data.json");
   if (response.ok) {
     const responseData = await response.json();
-    localStorage.setItem("data", JSON.stringify(responseData));
     return responseData;
   }
   throw Error("Data could not be loaded");
@@ -60,6 +55,7 @@ export const fetchCrew = async (Id: string): Promise<Crew> => {
   }
   throw Error(`Crew with the Id ${Id} does not exist`);
 };
+
 export const fetchDestination = async (Id: string): Promise<Destination> => {
   const data = await fetchData();
   const destinationData = data.destinations.find(
@@ -70,6 +66,7 @@ export const fetchDestination = async (Id: string): Promise<Destination> => {
   }
   throw Error(`Destination with the Id ${Id} does not exist`);
 };
+
 export const fetchTechnology = async (Id: string): Promise<Technology> => {
   const data = await fetchData();
   const technologyData = data.technology.find(

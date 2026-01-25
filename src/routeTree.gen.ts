@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TechnologyRouteImport } from './routes/technology'
 import { Route as DestinationRouteImport } from './routes/destination'
 import { Route as CrewRouteImport } from './routes/crew'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as TechnologyIndexRouteImport } from './routes/technology/index'
 import { Route as DestinationIndexRouteImport } from './routes/destination/index'
 import { Route as CrewIndexRouteImport } from './routes/crew/index'
@@ -32,6 +33,11 @@ const DestinationRoute = DestinationRouteImport.update({
 const CrewRoute = CrewRouteImport.update({
   id: '/crew',
   path: '/crew',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TechnologyIndexRoute = TechnologyIndexRouteImport.update({
@@ -67,6 +73,7 @@ const CrewCrewIdRoute = CrewCrewIdRouteImport.update({
 } as any)
 
 export interface FileRoutesByFullPath {
+  '/': typeof IndexRoute
   '/crew': typeof CrewRouteWithChildren
   '/destination': typeof DestinationRouteWithChildren
   '/technology': typeof TechnologyRouteWithChildren
@@ -78,6 +85,7 @@ export interface FileRoutesByFullPath {
   '/technology/': typeof TechnologyIndexRoute
 }
 export interface FileRoutesByTo {
+  '/': typeof IndexRoute
   '/crew/$crewId': typeof CrewCrewIdRoute
   '/destination/$destinationId': typeof DestinationDestinationIdRoute
   '/technology/$technologyId': typeof TechnologyTechnologyIdRoute
@@ -87,6 +95,7 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
   '/crew': typeof CrewRouteWithChildren
   '/destination': typeof DestinationRouteWithChildren
   '/technology': typeof TechnologyRouteWithChildren
@@ -100,6 +109,7 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/'
     | '/crew'
     | '/destination'
     | '/technology'
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/technology/'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/'
     | '/crew/$crewId'
     | '/destination/$destinationId'
     | '/technology/$technologyId'
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/technology'
   id:
     | '__root__'
+    | '/'
     | '/crew'
     | '/destination'
     | '/technology'
@@ -131,6 +143,7 @@ export interface FileRouteTypes {
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute
   CrewRoute: typeof CrewRouteWithChildren
   DestinationRoute: typeof DestinationRouteWithChildren
   TechnologyRoute: typeof TechnologyRouteWithChildren
@@ -157,6 +170,13 @@ declare module '@tanstack/react-router' {
       path: '/crew'
       fullPath: '/crew'
       preLoaderRoute: typeof CrewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/technology/': {
@@ -245,6 +265,7 @@ const TechnologyRouteWithChildren = TechnologyRoute._addFileChildren(
 )
 
 const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
   CrewRoute: CrewRouteWithChildren,
   DestinationRoute: DestinationRouteWithChildren,
   TechnologyRoute: TechnologyRouteWithChildren,
