@@ -108,7 +108,7 @@
 
   ol.nav-list-style {
     list-style: nav-list inside;
-    & > li::marker {
+    & li::marker {
       letter-spacing: 0.16875rem;
       font-weight: 700;
       color: var(--color-white);

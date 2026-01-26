@@ -5,7 +5,7 @@ import { Nav } from "./Nav";
 const meta = {
   component: Nav,
   parameters: {
-    layout: "centered",
+    layout: "fullscreen",
   },
 } satisfies Meta<typeof Nav>;
 
