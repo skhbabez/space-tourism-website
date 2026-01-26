@@ -38,9 +38,9 @@ const Nav = ({
         className="nav-list-style hidden md:flex justify-end gap-12 pe-10 xl:pe-16 backdrop-blur-xs bg-white/5 max-w-184 w-full"
       >
         {links.map(({ to, name }) => (
-          <li className="relative py-[38.5px]" key={name}>
+          <li className="relative py-[2.40625rem]" key={name}>
             <Link
-              className="ps-3 uppercase text-8 text-white tracking-[2px] peer"
+              className="ps-3 uppercase text-8 text-white tracking-[0.125rem] peer"
               to={to}
             >
               {name}
@@ -86,7 +86,7 @@ const Nav = ({
             {links.map(({ to, name }) => (
               <li className="relative" key={name}>
                 <Link
-                  className="ps-3 uppercase text-8 text-white tracking-[2px] peer"
+                  className="ps-3 uppercase text-8 text-white tracking-[0.125rem] peer"
                   to={to}
                 >
                   {name}
