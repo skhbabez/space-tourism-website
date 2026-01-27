@@ -104,7 +104,7 @@ const Nav = ({
       />
       <NavList
         start={0}
-        className="hidden md:flex justify-end gap-12 pe-10 xl:pe-16 backdrop-blur-xs bg-white/5 max-w-184 w-full"
+        className="hidden md:flex justify-end gap-12 pe-10 xl:pe-16 backdrop-blur-lg bg-white/5 max-w-184 w-full"
       >
         {links.map(({ to, name }) => (
           <NavListItem
@@ -131,7 +131,7 @@ const Nav = ({
         popover="auto"
         id={popoverId}
         className={clsx(
-          "md:hidden bg-blue-900/15 left-auto fixed right-0 mx-0 backdrop-blur-xs ps-8 h-screen min-w-63.5 space-y-12 peer",
+          "md:hidden bg-blue-900/15 left-auto fixed right-0 mx-0 backdrop-blur-lg ps-8 h-screen min-w-63.5 space-y-12 peer",
           "starting:[&:popover-open]:translate-x-full [&:popover-open]:translate-x-0 translate-x-full",
           "motion-reduce:transition-none transition-discrete transition-[display,translate] duration-300 ease-in-out",
         )}
