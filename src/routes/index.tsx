@@ -9,18 +9,19 @@ export const Route = createFileRoute("/")({
     ],
     styles: [
       {
+        media: "all and (width < 768px)",
         children: `body {
                   background-image: url("/assets/home/background-home-mobile.jpg");
                 }`,
       },
       {
-        media: "all and (min-width: 768px)",
+        media: "all and (768px <= width < 1280px)",
         children: `body {
                   background-image: url("/assets/home/background-home-tablet.jpg");
                 }`,
       },
       {
-        media: "all and (min-width: 1280px)",
+        media: "all and (width >= 1280px)",
         children: `body {
                   background-image: url("/assets/home/background-home-desktop.jpg");
                 }`,
