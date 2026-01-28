@@ -17,7 +17,7 @@ const NavLink = createLink(
     return (
       <a
         className={clsx(
-          "outline-none uppercase text-8 text-white tracking-[0.125rem]",
+          "outline-none uppercase text-8-desktop text-white tracking-[0.125rem]",
           className,
         )}
         {...props}

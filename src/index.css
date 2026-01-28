@@ -43,15 +43,27 @@
   --text-7--letter-spacing: 0.125rem;
   --text-7--font-weight: 400;
 
-  --text-8: 1rem;
-  --text-8--line-height: 19.2%;
-  --text-8--letter-spacing: 0.125rem;
-  --text-8--font-weight: 400;
+  --text-8-desktop: 1rem;
+  --text-8-desktop--line-height: auto;
+  --text-8-desktop--letter-spacing: 0.125rem;
+  --text-8-desktop--font-weight: 400;
 
   --text-9: 1.125rem;
   --text-9--line-height: 180%;
   --text-9--letter-spacing: normal;
   --text-9--font-weight: 400;
+
+  /* mobile */
+
+  --text-4-mobile: 1.125rem;
+  --text-4-mobile--line-height: auto;
+  --text-4-mobile--letter-spacing: normal;
+  --text-4-mobile--font-weight: 400;
+
+  --text-4-desktop: 2rem;
+  --text-4-desktop--line-height: auto;
+  --text-4-desktop--letter-spacing: normal;
+  --text-4-desktop--font-weight: 400;
 
   --font-*: initial;
   --font-barlow: "Barlow", sans-serif;
