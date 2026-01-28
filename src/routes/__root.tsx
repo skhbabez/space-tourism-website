@@ -41,7 +41,7 @@ function RootComponent() {
   return (
     <>
       <HeadContent />
-      <div className="grid grid-rows-[auto_1fr] h-full">
+      <div className="min-h-screen grid grid-rows-[auto_1fr]">
         <Nav />
         <Outlet />
       </div>
