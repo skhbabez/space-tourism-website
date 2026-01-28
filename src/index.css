@@ -8,10 +8,6 @@
   --color-black: #000000;
 
   --text-*: initial;
-  --text-1: 9rem;
-  --text-1--line-height: 171.9%;
-  --text-1--letter-spacing: normal;
-  --text-1--font-weight: 400;
 
   --text-2: 6.25rem;
   --text-2--line-height: 114.6%;
@@ -28,42 +24,63 @@
   --text-4--letter-spacing: normal;
   --text-4--font-weight: 400;
 
-  --text-5: 1.75rem;
-  --text-5--line-height: 33.6%;
-  --text-5--letter-spacing: 0.25rem;
-  --text-5--font-weight: 400;
-
-  --text-6: 1.75rem;
-  --text-6--line-height: 32.1%;
-  --text-6--letter-spacing: normal;
-  --text-6--font-weight: 400;
-
   --text-7: 0.875rem;
   --text-7--line-height: 16.8%;
   --text-7--letter-spacing: 0.125rem;
   --text-7--font-weight: 400;
 
   --text-8-desktop: 1rem;
-  --text-8-desktop--line-height: auto;
+  --text-8-desktop--line-height: normal;
   --text-8-desktop--letter-spacing: 0.125rem;
   --text-8-desktop--font-weight: 400;
 
-  --text-9: 1.125rem;
-  --text-9--line-height: 180%;
-  --text-9--letter-spacing: normal;
-  --text-9--font-weight: 400;
-
   /* mobile */
+  --text-1-mobile: 5rem;
+  --text-1-mobile--line-height: normal;
+  --text-1-mobile--letter-spacing: normal;
+  --text-1-mobile--font-weight: 400;
 
   --text-4-mobile: 1.125rem;
-  --text-4-mobile--line-height: auto;
+  --text-4-mobile--line-height: normal;
   --text-4-mobile--letter-spacing: normal;
   --text-4-mobile--font-weight: 400;
 
+  --text-6-mobile: 1rem;
+  --text-6-mobile--line-height: normal;
+  --text-6-mobile--letter-spacing: 0.15rem;
+  --text-6-mobile--font-weight: 400;
+
+  --text-9-mobile: 0.9375rem;
+  --text-9-mobile--line-height: 1.8;
+  --text-9-mobile--letter-spacing: normal;
+  --text-9-mobile--font-weight: 400;
+
+  /* tablet */
+  --text-9-tablet: 1rem;
+  --text-9-tablet--line-height: 1.8;
+  --text-9-tablet--letter-spacing: normal;
+  --text-9-tablet--font-weight: 400;
+
+  /* desktop */
+  --text-1-desktop: 9rem;
+  --text-1-desktop--line-height: normal;
+  --text-1-desktop--letter-spacing: normal;
+  --text-1-desktop--font-weight: 400;
+
   --text-4-desktop: 2rem;
-  --text-4-desktop--line-height: auto;
+  --text-4-desktop--line-height: normal;
   --text-4-desktop--letter-spacing: normal;
   --text-4-desktop--font-weight: 400;
+
+  --text-5-desktop: 1.75rem;
+  --text-5-desktop--line-height: normal;
+  --text-5-desktop--letter-spacing: 0.25rem;
+  --text-5-desktop--font-weight: 400;
+
+  --text-9-desktop: 1.125rem;
+  --text-9-desktop--line-height: 1.8;
+  --text-9-desktop--letter-spacing: normal;
+  --text-9-desktop--font-weight: 400;
 
   --font-*: initial;
   --font-barlow: "Barlow", sans-serif;

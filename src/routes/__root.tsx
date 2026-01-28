@@ -26,7 +26,8 @@ export const Route = createRootRoute({
     styles: [
       {
         children: `body {
-                  background-size:cover;
+                  background-size:auto 100vh;
+                  background-position:center;
                   background-repeat:no-repeat;
                   background-color:var(--color-blue-900);
                 }`,
@@ -40,8 +41,10 @@ function RootComponent() {
   return (
     <div>
       <HeadContent />
-      <Nav />
-      <Outlet />
+      <div className="h-min-screen grid grid-rows-[auto_1fr]">
+        <Nav />
+        <Outlet />
+      </div>
       <TanStackRouterDevtools />
     </div>
   );
