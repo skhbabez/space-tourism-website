@@ -17,7 +17,7 @@ const NavLink = createLink(
     return (
       <a
         className={clsx(
-          "outline-none uppercase text-8-desktop text-white tracking-[0.125rem]",
+          "outline-none uppercase text-8-desktop text-white",
           className,
         )}
         {...props}
@@ -153,7 +153,11 @@ const Nav = ({
                 key={name}
                 selected={!!matchRoute({ to: to, fuzzy: true })}
               >
-                <NavLink className="ps-3 peer" to={to}>
+                <NavLink
+                  aria-current={!!matchRoute({ to: to, fuzzy: true })}
+                  className="ps-3 peer"
+                  to={to}
+                >
                   {name}
                 </NavLink>
               </NavListItem>

@@ -42,7 +42,8 @@ interface Data {
   technology: Technology[];
 }
 
-// We mock an api. Mostly to test out tanstacks caching mechanism.
+// We mock an api. Mostly to test out tanstacks caching mechanism and intent based preloading.
+// While we could just load all the data per route as a list of e.g. destinations, this would not make the preloading visible in the dev Tools.
 const fetchData = async (): Promise<Data> => {
   const response = await fetch("/data.json");
   if (response.ok) {
@@ -60,15 +61,14 @@ export const fetchCrew = async (Id: string): Promise<Crew> => {
   }
   throw Error(`Crew with the Id ${Id} does not exist`);
 };
-export const fetchDestination = async (Id: string): Promise<Destination> => {
+export const fetchDestination = async (
+  Id: string,
+): Promise<Destination | undefined> => {
   const data = await fetchData();
   const destinationData = data.destinations.find(
     (destination) => destination.id === Id,
   );
-  if (destinationData) {
-    return destinationData;
-  }
-  throw Error(`Destination with the Id ${Id} does not exist`);
+  return destinationData;
 };
 
 export const fetchDestinations = async (): Promise<DestinationSummary[]> => {
