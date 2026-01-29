@@ -8,7 +8,7 @@ const Home = ({
 }: Omit<ComponentPropsWithRef<"div">, "children">) => {
   return (
     <section
-      className={clsx("px-6 py-6 md:py-32 md:px-10", className)}
+      className={clsx("px-6 py-6 md:py-32 md:px-10 h-full", className)}
       {...props}
     >
       <div className="md:h-full md:flex md:items-end">
