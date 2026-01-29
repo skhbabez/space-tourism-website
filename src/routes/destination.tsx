@@ -1,4 +1,5 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { fetchDestinations } from "../data";
 
 export const Route = createFileRoute("/destination")({
   head: () => ({
@@ -28,6 +29,7 @@ export const Route = createFileRoute("/destination")({
       },
     ],
   }),
+  loader: async () => fetchDestinations(),
   component: RouteComponent,
 });
 

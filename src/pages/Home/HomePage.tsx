@@ -1,18 +1,18 @@
 import clsx from "clsx";
 import type { ComponentPropsWithRef } from "react";
-import DisplayButton from "../components/DisplayButton/DisplayButton";
+import DisplayButton from "../../components/DisplayButton/DisplayButton";
 
-const Home = ({
+const HomePage = ({
   className,
   ...props
 }: Omit<ComponentPropsWithRef<"div">, "children">) => {
   return (
-    <section
+    <div
       className={clsx("px-6 py-6 md:py-32 md:px-10 h-full", className)}
       {...props}
     >
       <div className="md:h-full md:flex md:items-end">
-        <div className="flex flex-col items-center gap-29.75 w-full md:gap-16.5 xl:flex-row xl:justify-between xl:max-w-277.5 xl:mx-auto">
+        <section className="flex flex-col items-center gap-29.75 w-full md:gap-16.5 xl:flex-row xl:justify-between xl:max-w-277.5 xl:mx-auto">
           <div className="flex flex-col gap-6 text-center max-w-lg xl:text-start">
             <hgroup className="contents">
               <p className="uppercase text-6-mobile md:text-5-desktop text-blue-300 font-barlow-condensed">
@@ -30,9 +30,9 @@ const Home = ({
             </p>
           </div>
           <DisplayButton to="/destination">explore</DisplayButton>
-        </div>
+        </section>
       </div>
-    </section>
+    </div>
   );
 };
-export default Home;
+export default HomePage;

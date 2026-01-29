@@ -21,6 +21,11 @@ export interface Destination {
   travel: string;
 }
 
+export interface DestinationSummary {
+  id: string;
+  name: string;
+}
+
 export interface Technology {
   id: string;
   name: string;
@@ -55,7 +60,6 @@ export const fetchCrew = async (Id: string): Promise<Crew> => {
   }
   throw Error(`Crew with the Id ${Id} does not exist`);
 };
-
 export const fetchDestination = async (Id: string): Promise<Destination> => {
   const data = await fetchData();
   const destinationData = data.destinations.find(
@@ -65,6 +69,14 @@ export const fetchDestination = async (Id: string): Promise<Destination> => {
     return destinationData;
   }
   throw Error(`Destination with the Id ${Id} does not exist`);
+};
+
+export const fetchDestinations = async (): Promise<DestinationSummary[]> => {
+  const data = await fetchData();
+  return data.destinations.map((destination) => ({
+    id: destination.id,
+    name: destination.name,
+  }));
 };
 
 export const fetchTechnology = async (Id: string): Promise<Technology> => {
