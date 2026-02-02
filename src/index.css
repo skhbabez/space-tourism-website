@@ -9,11 +9,6 @@
 
   --text-*: initial;
 
-  --text-2: 6.25rem;
-  --text-2--line-height: 114.6%;
-  --text-2--letter-spacing: normal;
-  --text-2--font-weight: 400;
-
   --text-3: 3.5rem;
   --text-3--line-height: 64.2%;
   --text-3--letter-spacing: normal;
@@ -34,6 +29,11 @@
   --text-1-mobile--line-height: normal;
   --text-1-mobile--letter-spacing: normal;
   --text-1-mobile--font-weight: 400;
+
+  --text-2-mobile: 3.5rem;
+  --text-2-mobile--line-height: normal;
+  --text-2-mobile--letter-spacing: normal;
+  --text-2-mobile--font-weight: 400;
 
   --text-4-mobile: 1.125rem;
   --text-4-mobile--line-height: normal;
@@ -56,6 +56,11 @@
   --text-9-mobile--font-weight: 400;
 
   /* tablet */
+  --text-2-tablet: 5rem;
+  --text-2-tablet--line-height: normal;
+  --text-2-tablet--letter-spacing: normal;
+  --text-2-tablet--font-weight: 400;
+
   --text-5-tablet: 1.25rem;
   --text-5-tablet--line-height: normal;
   --text-5-tablet--letter-spacing: 0.1875rem;
@@ -72,6 +77,11 @@
   --text-1-desktop--letter-spacing: normal;
   --text-1-desktop--font-weight: 400;
 
+  --text-2-desktop: 6rem;
+  --text-2-desktop--line-height: normal;
+  --text-2-desktop--letter-spacing: normal;
+  --text-2-desktop--font-weight: 400;
+
   --text-4-desktop: 2rem;
   --text-4-desktop--line-height: normal;
   --text-4-desktop--letter-spacing: normal;
@@ -81,6 +91,16 @@
   --text-5-desktop--line-height: normal;
   --text-5-desktop--letter-spacing: 0.25rem;
   --text-5-desktop--font-weight: 400;
+
+  --text-6-desktop: 1.75rem;
+  --text-6-desktop--line-height: normal;
+  --text-6-desktop--letter-spacing: normal;
+  --text-6-desktop--font-weight: 400;
+
+  --text-7-desktop: 0.875rem;
+  --text-7-desktop--line-height: normal;
+  --text-7-desktop--letter-spacing: 0.13125rem;
+  --text-7-desktop--font-weight: 400;
 
   --text-8-desktop: 1rem;
   --text-8-desktop--line-height: normal;

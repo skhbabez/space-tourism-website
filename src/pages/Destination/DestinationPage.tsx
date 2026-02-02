@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { type ComponentPropsWithRef } from "react";
+import { useId, type ComponentPropsWithRef } from "react";
 import { Link, useLoaderData } from "@tanstack/react-router";
 
 const DestinationPage = ({
@@ -9,29 +9,37 @@ const DestinationPage = ({
   const destinations = useLoaderData({ from: "/destination" });
   const destination = useLoaderData({ from: "/destination/$destinationId" });
   const currentRouteId = destination.id;
+  const tabId = useId();
 
   return (
     <div className={clsx("p-6 md:p-10 xl:p-12", className)} {...props}>
-      <section className="max-w-277.5 mx-auto space-y-6 md:max-w-172">
+      <section className="max-w-277.5 mx-auto space-y-6 md:max-w-172 xl:max-w-277.5">
         <h1 className="text-6-mobile md:text-5-tablet xl:text-5-desktop font-barlow-condensed uppercase text-white text-center md:text-start">
           <span className="font-bold text-white/25 pe-6">01</span>pick your
           destination
         </h1>
         <div className="flex flex-col gap-8 xl:flex-row xl:justify-between">
-          <div className="px-[28.2%] md:px-[27.06%] xl:px-[1.84375rem]">
+          <div className="px-[28.2%] md:px-[27.06%] xl:px-[1.84375rem]  xl:flex-1">
             <img className="mx-auto" src={destination.images.webp} />
           </div>
           {/* make ths a true tablist with arrow navigation?*/}
-          <div className="flex flex-col items-center xl:items-start">
-            <ul className="flex gap-8 h-fit">
+          <div className="flex flex-col  xl:flex-1 gap-6 xl:gap-10">
+            <ul
+              role="tablist"
+              className="self-center xl:self-start flex gap-8 h-fit"
+            >
               {destinations.map((destination) => (
                 <div className="min-h-8 flex flex-col justify-between">
                   <Link
+                    id={`tab-${tabId}`}
+                    type="button"
+                    role="tab"
+                    aria-selected={destination.id === currentRouteId}
+                    aria-controls={`tabpanel-${tabId}`}
                     to="/destination/$destinationId"
-                    aria-current={destination.id === currentRouteId}
                     params={{ destinationId: destination.id }}
                     className={clsx(
-                      "text-8-mobile md:text-8-desktop text-blue-300 uppercase peer",
+                      "text-8-mobile md:text-8-desktop text-blue-300 uppercase peer font-barlow-condensed",
                       destination.id === currentRouteId && "text-white",
                     )}
                   >
@@ -48,6 +56,42 @@ const DestinationPage = ({
                 </div>
               ))}
             </ul>
+            <div
+              id={`tabpanel-${tabId}`}
+              role="tabpanel"
+              tabIndex={0}
+              aria-labelledby={`tab-${tabId}`}
+              className="contents"
+            >
+              <div className="space-y-4 min-h-54">
+                <h2 className="text-center xl:text-start text-2-mobile md:text-2-tablet xl:text-2-desktop font-bellefair text-white uppercase">
+                  {destination.name}
+                </h2>
+                <p className="text-center xl:text-start text-9-mobile md:text-9-tablet xl:text-9-desktop font-barlow text-blue-300">
+                  {destination.description}
+                </p>
+              </div>
+              <hr className="border-t-2 border-[#979797]/25" />
+              <dl className="uppercase text-center xl:text-start flex flex-col gap-6 md:flex-row">
+                <div className="space-y-3 md:flex-1">
+                  <dt className="font-barlow-condensed text-7-desktop text-blue-300">
+                    avg. distance
+                  </dt>
+                  <dd className="font-bellefair text-6-desktop text-white">
+                    {destination.distance}
+                  </dd>
+                </div>
+
+                <div className="space-y-3 md:flex-1">
+                  <dt className="font-barlow-condensed text-7-desktop text-blue-300">
+                    est. travel time
+                  </dt>
+                  <dd className="font-bellefair text-6-desktop text-white">
+                    {destination.travel}
+                  </dd>
+                </div>
+              </dl>
+            </div>
           </div>
         </div>
       </section>
