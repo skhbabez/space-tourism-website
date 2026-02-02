@@ -23,7 +23,7 @@ const DestinationPage = ({
             <img className="mx-auto" src={destination.images.webp} />
           </div>
           {/* make ths a true tablist with arrow navigation?*/}
-          <div className="flex flex-col  xl:flex-1 gap-6 xl:gap-10">
+          <div className="flex flex-col self-center xl:flex-1 gap-6 xl:gap-10 max-w-81.75 md:max-w-lg xl:max-w-111.25">
             <ul
               role="tablist"
               className="self-center xl:self-start flex gap-8 h-fit"
@@ -63,7 +63,7 @@ const DestinationPage = ({
               aria-labelledby={`tab-${tabId}`}
               className="contents"
             >
-              <div className="space-y-4 min-h-54">
+              <div className="space-y-4 min-h-54 md:min-h-48.75 xl:min-h-63.5 ">
                 <h2 className="text-center xl:text-start text-2-mobile md:text-2-tablet xl:text-2-desktop font-bellefair text-white uppercase">
                   {destination.name}
                 </h2>
