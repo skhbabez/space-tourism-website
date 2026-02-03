@@ -12,14 +12,14 @@ const DestinationPage = ({
   const tabId = useId();
 
   return (
-    <div className={clsx("p-6 md:p-10 xl:p-12", className)} {...props}>
-      <section className="max-w-277.5 mx-auto space-y-6 md:max-w-172 xl:max-w-277.5">
+    <div className={clsx("p-6 md:p-10 xl:p-12 h-full", className)} {...props}>
+      <section className="max-w-277.5 mx-auto space-y-6 md:max-w-172 xl:max-w-277.5 h-full ">
         <h1 className="text-6-mobile md:text-5-tablet xl:text-5-desktop font-barlow-condensed uppercase text-white text-center md:text-start">
           <span className="font-bold text-white/25 pe-6">01</span>pick your
           destination
         </h1>
-        <div className="flex flex-col gap-8 xl:flex-row xl:justify-between">
-          <div className="px-[28.2%] md:px-[27.06%] xl:px-[1.84375rem]  xl:flex-1">
+        <div className="flex flex-col gap-8 xl:flex-row xl:justify-between xl:max-h-183.5 xl:h-full">
+          <div className="px-[28.2%] py-[1.65625rem] md:py-10.5 md:px-[27.06%] xl:px-[1.84375rem] xl:flex-1 xl:flex xl:items-center">
             <img className="mx-auto" src={destination.images.webp} />
           </div>
           {/* make ths a true tablist with arrow navigation?*/}

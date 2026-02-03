@@ -34,9 +34,5 @@ export const Route = createFileRoute("/destination")({
 });
 
 function RouteComponent() {
-  return (
-    <>
-      <div>Hello "/destination"!</div> <Outlet />
-    </>
-  );
+  return <Outlet />;
 }
