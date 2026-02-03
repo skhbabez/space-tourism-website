@@ -29,17 +29,16 @@ const DestinationPage = ({
               className="self-center xl:self-start flex gap-8 h-fit"
             >
               {destinations.map((destination) => (
-                <div className="min-h-8 flex flex-col justify-between">
+                <div className="min-h-8 rounded-t-xs flex flex-col justify-between outline-none has-focus-visible:bg-white/10 transition-colors duration-300 ease-in-out motion-reduce:transition-none">
                   <Link
                     id={`tab-${tabId}`}
-                    type="button"
                     role="tab"
                     aria-selected={destination.id === currentRouteId}
                     aria-controls={`tabpanel-${tabId}`}
                     to="/destination/$destinationId"
                     params={{ destinationId: destination.id }}
                     className={clsx(
-                      "text-8-mobile md:text-8-desktop text-blue-300 uppercase peer font-barlow-condensed",
+                      "outline-none text-8-mobile md:text-8-desktop text-blue-300 uppercase peer font-barlow-condensed",
                       destination.id === currentRouteId && "text-white",
                     )}
                   >
