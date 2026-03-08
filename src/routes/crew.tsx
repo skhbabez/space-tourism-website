@@ -1,5 +1,6 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 import { fetchCrews } from "../data";
+import TitleLayout from "../pages/TitleLayout/TitleLayout";
 
 export const Route = createFileRoute("/crew")({
   head: () => ({
@@ -34,5 +35,9 @@ export const Route = createFileRoute("/crew")({
 });
 
 function RouteComponent() {
-  return <Outlet />;
+  return (
+    <TitleLayout count="02" title="meet your crew">
+      <Outlet />
+    </TitleLayout>
+  );
 }
