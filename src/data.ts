@@ -8,6 +8,10 @@ export interface Crew {
   role: string;
   bio: string;
 }
+export interface CrewSummary {
+  id: string;
+  name: string;
+}
 
 export interface Destination {
   id: string;
@@ -53,14 +57,19 @@ const fetchData = async (): Promise<Data> => {
   throw Error("Data could not be loaded");
 };
 
-export const fetchCrew = async (Id: string): Promise<Crew> => {
+export const fetchCrew = async (Id: string): Promise<Crew | undefined> => {
   const data = await fetchData();
   const crewData = data.crew.find((crew) => crew.id === Id);
-  if (crewData) {
-    return crewData;
-  }
-  throw Error(`Crew with the Id ${Id} does not exist`);
+  return crewData;
 };
+export const fetchCrews = async (): Promise<CrewSummary[]> => {
+  const data = await fetchData();
+  return data.crew.map((crew) => ({
+    id: crew.id,
+    name: crew.name,
+  }));
+};
+
 export const fetchDestination = async (
   Id: string,
 ): Promise<Destination | undefined> => {

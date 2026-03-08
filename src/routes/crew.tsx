@@ -1,4 +1,5 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { fetchCrews } from "../data";
 
 export const Route = createFileRoute("/crew")({
   head: () => ({
@@ -28,13 +29,10 @@ export const Route = createFileRoute("/crew")({
       },
     ],
   }),
+  loader: async () => fetchCrews(),
   component: RouteComponent,
 });
 
 function RouteComponent() {
-  return (
-    <>
-      <div>Hello "/crew"!</div> <Outlet />;
-    </>
-  );
+  return <Outlet />;
 }

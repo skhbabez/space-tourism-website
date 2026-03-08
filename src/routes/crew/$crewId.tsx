@@ -1,12 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { fetchCrew } from "../../data";
+import CrewPage from "../../pages/Crew/CrewPage";
 
 export const Route = createFileRoute("/crew/$crewId")({
-  loader: async ({ params: { crewId } }) => fetchCrew(crewId),
-  component: RouteComponent,
+  loader: async ({ params: { crewId } }) => {
+    const data = await fetchCrew(crewId);
+    if (data) {
+      return data;
+    }
+    throw Route.redirect({
+      to: "/crew",
+    });
+  },
+  component: CrewPage,
 });
-
-function RouteComponent() {
-  const crew = Route.useLoaderData();
-  return <div>Hello "{crew.name}"!</div>;
-}
