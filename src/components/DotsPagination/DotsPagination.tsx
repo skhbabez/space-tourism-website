@@ -24,14 +24,15 @@ interface DotsPaginatonLinkProps extends Omit<
 const DotsPaginatonLink = createLink(
   ({ className, selected = false, ...props }: DotsPaginatonLinkProps) => {
     return (
-      <li
-        className={clsx(
-          "rounded-full aspect-square h-2.5 md:h-3.75 bg-white",
-          selected || "opacity-[17.44%]",
-          className,
-        )}
-      >
-        <a {...props} />
+      <li>
+        <a
+          className={clsx(
+            "block rounded-full aspect-square h-2.5 md:h-3.75 bg-white",
+            selected || "opacity-[17.44%]",
+            className,
+          )}
+          {...props}
+        />
       </li>
     );
   },
