@@ -8,7 +8,7 @@ const DotsPagination = ({
   ...props
 }: ComponentPropsWithRef<"ul">) => {
   return (
-    <ul className={clsx("flex gap-4 md:gap-10", className)} {...props}>
+    <ul className={clsx("flex gap-4 xl:gap-10", className)} {...props}>
       {children}
     </ul>
   );
@@ -27,7 +27,7 @@ const DotsPaginatonLink = createLink(
       <li>
         <a
           className={clsx(
-            "block rounded-full aspect-square h-2.5 md:h-3.75 bg-white",
+            "block rounded-full aspect-square h-2.5 xl:h-3.75 bg-white",
             selected || "opacity-[17.44%]",
             className,
           )}
