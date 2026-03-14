@@ -16,9 +16,9 @@ const CrewPage = ({
   return (
     <>
       <div className={clsx("", className)} {...props}>
-        <div className="flex flex-col items-center gap-8">
-          <div className="flex flex-col items-center xl:items-start justify-between max-w-lg min-h-79.75 md:max-xl:min-h-76.25 md:max-xl:gap-6  pt-10">
-            <div className="text-center xl:text-left">
+        <div className="flex flex-col xl:flex-row max-xl:items-center gap-8">
+          <div className="flex flex-col xl:flex-1  items-center xl:items-start justify-between max-xl:max-w-lg min-h-79.75 md:min-h-76.25 xl:h-183.5 md:max-xl:gap-6  pt-10 xl:pt-0">
+            <div className="flex flex-col xl:flex-1  xl:justify-center gap-6  text-center xl:text-left">
               <hgroup>
                 <p className="uppercase text-4-mobile md:text-4-tablet xl:text-4-desktop text-white opacity-50 font-bellefair">
                   {crew.role}
@@ -27,11 +27,11 @@ const CrewPage = ({
                   {crew.name}
                 </h1>
               </hgroup>
-              <p className="text-9-mobile md:text-9-tablet xl:text-9-desktop text-blue-300 font-barlow mt-6">
+              <p className="text-9-mobile md:text-9-tablet xl:text-9-desktop text-blue-300 font-barlow">
                 {crew.bio}
               </p>
             </div>
-            <DotsPagination>
+            <DotsPagination className="xl:pb-12">
               {crews.map((crew) => (
                 <DotsPaginatonLink
                   key={crew.id}
@@ -42,7 +42,7 @@ const CrewPage = ({
               ))}
             </DotsPagination>
           </div>
-          <div className="px-7 pt-1.25 md:pt-4">
+          <div className="xl:flex-1 px-7 xl:px-0 pt-1.25 md:pt-4 xl:pt-0 xl:flex xl:items-center">
             <img src={crew.images.webp} />
           </div>
         </div>
