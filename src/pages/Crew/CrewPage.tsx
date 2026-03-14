@@ -43,7 +43,11 @@ const CrewPage = ({
             </DotsPagination>
           </div>
           <div className="xl:flex-1 px-7 xl:px-0 pt-1.25 md:pt-4 xl:pt-0 xl:flex xl:items-center">
-            <img src={crew.images.webp} />
+            <img
+              className="mask-b-from-77%"
+              src={crew.images.webp}
+              alt={crew.name}
+            />
           </div>
         </div>
       </div>
