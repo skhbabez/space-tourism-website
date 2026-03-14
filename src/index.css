@@ -183,4 +183,9 @@
       color: var(--color-white);
     }
   }
+
+  .line {
+    /* come up with a better solution */
+    inline-size: max(0rem, -40rem + 83.3333vw);
+  }
 }

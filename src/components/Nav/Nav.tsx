@@ -95,16 +95,21 @@ const Nav = ({
       )}
       {...props}
     >
-      <img
-        width={40}
-        height={40}
-        src={logo}
-        alt=""
-        className="aspect-square w-10 md:w-12 md:mx-10 xl:mx-16"
-      />
+      <div className=" md:px-10 xl:px-16 flex items-center gap-16">
+        <img
+          width={40}
+          height={40}
+          src={logo}
+          alt=""
+          className="aspect-square w-10 md:w-12 "
+        />
+        <div className="relative">
+          <div className="absolute z-10 hidden md:block line h-px bg-white/25  "></div>
+        </div>
+      </div>
       <NavList
         start={0}
-        className="hidden md:flex justify-end gap-12 pe-10 xl:pe-16 backdrop-blur-lg bg-white/5 max-w-184 w-full"
+        className=" hidden md:flex justify-end gap-12 pe-10 xl:pe-16 backdrop-blur-lg bg-white/5 max-w-184 w-full"
       >
         {links.map(({ to, name }) => (
           <NavListItem
