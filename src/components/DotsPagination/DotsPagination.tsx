@@ -27,8 +27,8 @@ const DotsPaginatonLink = createLink(
       <li>
         <a
           className={clsx(
-            "block rounded-full aspect-square h-2.5 xl:h-3.75 bg-white",
-            selected || "opacity-[17.44%]",
+            "block rounded-full aspect-square h-2.5 xl:h-3.75 bg-white outline-2 outline-white/0  focus-visible:outline-white  transition-all duration-300 motion-reduce:transition-none",
+            selected || "opacity-[17.44%] hover:opacity-40",
             className,
           )}
           {...props}
