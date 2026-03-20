@@ -41,7 +41,11 @@ Users should be able to:
 
 ### What I learned
 
+I used this project mainly to dive into caching mechanisms with tanstack router. I overengineered this project a little t make the preloading feature and caching feature more visible, mostly because I wanteed to see it in action. I also learned a lot about general routing strategies with tanstack router in general, using index routes, route trees etc.
+
 ### Continued development
+
+There are a lot of small things that can be improved. Like for example adding keaboard navigation to the pagination features or extracting components form the Crew Page.
 
 ### Useful resources
 

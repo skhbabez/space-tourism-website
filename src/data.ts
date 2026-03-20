@@ -40,6 +40,11 @@ export interface Technology {
   description: string;
 }
 
+export interface TechnologySummary {
+  id: string;
+  name: string;
+}
+
 interface Data {
   destinations: Destination[];
   crew: Crew[];
@@ -62,6 +67,7 @@ export const fetchCrew = async (Id: string): Promise<Crew | undefined> => {
   const crewData = data.crew.find((crew) => crew.id === Id);
   return crewData;
 };
+
 export const fetchCrews = async (): Promise<CrewSummary[]> => {
   const data = await fetchData();
   return data.crew.map((crew) => ({
@@ -88,13 +94,19 @@ export const fetchDestinations = async (): Promise<DestinationSummary[]> => {
   }));
 };
 
-export const fetchTechnology = async (Id: string): Promise<Technology> => {
+export const fetchTechnology = async (
+  Id: string,
+): Promise<Technology | undefined> => {
   const data = await fetchData();
   const technologyData = data.technology.find(
     (technology) => technology.id === Id,
   );
-  if (technologyData) {
-    return technologyData;
-  }
-  throw Error(`Technology with the Id ${Id} does not exist`);
+  return technologyData;
+};
+export const fetchTechnologies = async (): Promise<TechnologySummary[]> => {
+  const data = await fetchData();
+  return data.technology.map((technology) => ({
+    id: technology.id,
+    name: technology.name,
+  }));
 };
