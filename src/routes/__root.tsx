@@ -42,7 +42,7 @@ function RootComponent() {
     <>
       <HeadContent />
       <div className="min-h-screen grid grid-rows-[auto_1fr]">
-        <Nav />
+        <Nav className="xl:mt-10" />
         <main>
           <Outlet />
         </main>
