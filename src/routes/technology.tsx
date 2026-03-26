@@ -1,5 +1,6 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 import TitleLayout from "../pages/TitleLayout/TitleLayout";
+import { fetchTechnologies } from "../data";
 
 export const Route = createFileRoute("/technology")({
   head: () => ({
@@ -29,6 +30,7 @@ export const Route = createFileRoute("/technology")({
       },
     ],
   }),
+  loader: async () => fetchTechnologies(),
   component: RouteComponent,
 });
 
