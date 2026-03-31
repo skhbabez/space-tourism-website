@@ -41,7 +41,43 @@ Users should be able to:
 
 ### What I learned
 
-I used this project mainly to dive into caching mechanisms with tanstack router. I overengineered this project a little t make the preloading feature and caching feature more visible, mostly because I wanteed to see it in action. I also learned a lot about general routing strategies with tanstack router in general, using index routes, route trees etc.
+I used this project mainly to dive into caching mechanisms with tanstack router. I overengineered this project a little to make the preloading feature and caching feature more visible, mostly because I wanteed to see it in action. I also learned a lot about routing strategies with tanstack router in general, using index routes, route trees etc.
+
+Loading data in routes seems especially useful and was not hard to implement
+
+```ts
+export const Route = createFileRoute("/destination/$destinationId")({
+  loader: async ({ params: { destinationId } }) => {
+    const data = await fetchDestination(destinationId);
+    if (data) {
+      return data;
+    }
+    throw Route.redirect({
+      to: "/destination",
+    });
+  },
+  component: DestinationPage,
+});
+```
+
+Adjusting page metadata like the title or the background cn also be attached to routes, which was especially useful for the background image. Thugh i am not sure how effcient this is, since tanstack seems to just attach these scripts to the beginning of the document..
+
+```ts
+export const Route = createFileRoute("/technology")({
+  head: () => ({
+    meta: [
+      {
+        title: "Technology - Space Tourism - Frontendmentor",
+      },
+    ],
+    styles: [
+      {
+        media: "all and (width < 768px)",
+        children: `body {
+                  background-image: url("/assets/technology/background-technology-mobile.jpg");
+                }`,
+      },
+```
 
 ### Continued development
 

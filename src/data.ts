@@ -34,8 +34,8 @@ export interface Technology {
   id: string;
   name: string;
   images: {
-    png: string;
-    webp: string;
+    portrait: string;
+    landscape: string;
   };
   description: string;
 }

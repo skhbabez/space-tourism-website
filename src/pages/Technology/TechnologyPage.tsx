@@ -23,6 +23,15 @@ const TechnologyPage = ({
         {...props}
       >
         <div className="flex flex-col xl:flex-1  items-center xl:items-start justify-between max-xl:max-w-lg min-h-79.75 md:min-h-76.25 xl:h-183.5 md:max-xl:gap-6  pt-10 xl:pt-0">
+          <div className="xl:flex-1 px-7 xl:px-0 pt-1.25 md:pt-4 xl:pt-7.25 xl:flex xl:items-center">
+            <picture>
+              <source
+                media="(width >= 1280px)"
+                srcSet={technology.images.portrait}
+              />
+              <img src={technology.images.landscape} alt={technology.name} />
+            </picture>
+          </div>
           <div className="flex flex-col xl:flex-1  xl:justify-center gap-6  text-center xl:text-left">
             <hgroup>
               <p className="uppercase text-4-mobile md:text-4-tablet xl:text-4-desktop text-white opacity-50 font-bellefair">
@@ -46,13 +55,6 @@ const TechnologyPage = ({
               />
             ))}
           </NumPagination>
-        </div>
-        <div className="xl:flex-1 px-7 xl:px-0  pt-1.25 md:pt-4 xl:pt-7.25 xl:flex xl:items-center">
-          <img
-            className="mask-b-from-77%"
-            src={technology.images.webp}
-            alt={technology.name}
-          />
         </div>
       </div>
     </>
