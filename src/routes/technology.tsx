@@ -1,5 +1,6 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 import { fetchTechnologies } from "../data";
+import TitleLayout from "../pages/TitleLayout/TitleLayout";
 
 export const Route = createFileRoute("/technology")({
   head: () => ({
@@ -34,5 +35,9 @@ export const Route = createFileRoute("/technology")({
 });
 
 function RouteComponent() {
-  return <Outlet />;
+  return (
+    <TitleLayout count="03" title="space launch 101">
+      <Outlet />
+    </TitleLayout>
+  );
 }
