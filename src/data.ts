@@ -54,7 +54,7 @@ interface Data {
 // We mock an api. Mostly to test out tanstacks caching mechanism and intent based preloading.
 // While we could just load all the data per route as a list of e.g. destinations, this would not make the preloading visible in the dev Tools.
 const fetchData = async (): Promise<Data> => {
-  const response = await fetch("/data.json");
+  const response = await fetch("data.json");
   if (response.ok) {
     const responseData = await response.json();
     return responseData;
