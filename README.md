@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/skhbabez/space-tourism-website](https://github.com/skhbabez/space-tourism-website)
+- Live Site URL: [https://skhbabez.github.io/space-tourism-website/](https://skhbabez.github.io/space-tourism-website/)
 
 ## My process
 
@@ -81,9 +81,4 @@ export const Route = createFileRoute("/technology")({
 
 ### Continued development
 
-There are a lot of small things that can be improved. Like for example adding keaboard navigation to the pagination features or extracting components form the Crew Page.
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+There are a lot of small things that can be improved. Like for example adding keyboard navigation to the pagination features or extracting components form the Crew Page.
