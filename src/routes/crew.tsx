@@ -13,19 +13,19 @@ export const Route = createFileRoute("/crew")({
       {
         media: "all and (width < 768px)",
         children: `body {
-                  background-image: url("/assets/crew/background-crew-mobile.jpg");
+                  background-image: url("assets/crew/background-crew-mobile.jpg");
                 }`,
       },
       {
         media: "all and (768px <= width < 1280px)",
         children: `body {
-                  background-image: url("/assets/crew/background-crew-tablet.jpg");
+                  background-image: url("assets/crew/background-crew-tablet.jpg");
                 }`,
       },
       {
         media: "all and (width >= 1280px)",
         children: `body {
-                  background-image: url("/assets/crew/background-crew-desktop.jpg");
+                  background-image: url("assets/crew/background-crew-desktop.jpg");
                 }`,
       },
     ],
