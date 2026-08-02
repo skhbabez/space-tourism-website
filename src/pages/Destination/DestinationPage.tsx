@@ -19,7 +19,11 @@ const DestinationPage = ({
       {...props}
     >
       <div className="px-[28.2%] py-[1.65625rem] md:py-10.5 md:px-[27.06%] xl:px-[1.84375rem] xl:flex-1 xl:flex xl:items-center">
-        <img className="mx-auto w-full" src={destination.images.webp} />
+        <img
+          className="mx-auto w-full"
+          src={destination.images.webp}
+          alt={destination.name}
+        />
       </div>
       {/* make ths a true tablist with arrow navigation?*/}
       <div className="contents md:flex md:justify-center md:items-center md:py-[11.5px] xl:flex-1">
