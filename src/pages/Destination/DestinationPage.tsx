@@ -33,7 +33,7 @@ const DestinationPage = ({
             className="self-center xl:self-start flex gap-8 h-fit"
           >
             {destinations.map((destination) => (
-              <div className="min-h-8 rounded-t-xs flex flex-col justify-between outline-none has-focus-visible:bg-white/10 transition-colors duration-300 ease-in-out motion-reduce:transition-none">
+              <li className="min-h-8 rounded-t-xs flex flex-col justify-between outline-none has-focus-visible:bg-white/10 transition-colors duration-300 ease-in-out motion-reduce:transition-none">
                 <Link
                   id={`tab-${destination.id}`}
                   role="tab"
@@ -55,8 +55,8 @@ const DestinationPage = ({
                       ? "opacity-100"
                       : "opacity-0 peer-hover:opacity-50 peer-focus-visible:opacity-50",
                   )}
-                ></div>
-              </div>
+                />
+              </li>
             ))}
           </ul>
           <div
