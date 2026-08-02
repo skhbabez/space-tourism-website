@@ -117,7 +117,11 @@ const Nav = ({
             key={name}
             selected={!!matchRoute({ to: to, fuzzy: true })}
           >
-            <NavLink className="ps-3 peer" to={to}>
+            <NavLink
+              className="ps-3 peer"
+              to={to}
+              aria-current={!!matchRoute({ to: to, fuzzy: true }) && "page"}
+            >
               {name}
             </NavLink>
           </NavListItem>
@@ -161,7 +165,7 @@ const Nav = ({
                 selected={!!matchRoute({ to: to, fuzzy: true })}
               >
                 <NavLink
-                  aria-current={!!matchRoute({ to: to, fuzzy: true })}
+                  aria-current={!!matchRoute({ to: to, fuzzy: true }) && "page"}
                   className="ps-3 peer"
                   to={to}
                 >
