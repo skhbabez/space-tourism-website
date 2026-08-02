@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { useId, type ComponentPropsWithRef } from "react";
+import { type ComponentPropsWithRef } from "react";
 import { Link, useLoaderData } from "@tanstack/react-router";
 
 const DestinationPage = ({
@@ -9,7 +9,6 @@ const DestinationPage = ({
   const destinations = useLoaderData({ from: "/destination" });
   const destination = useLoaderData({ from: "/destination/$destinationId" });
   const currentRouteId = destination.id;
-  const tabId = useId();
 
   return (
     <section
@@ -32,10 +31,10 @@ const DestinationPage = ({
             {destinations.map((destination) => (
               <div className="min-h-8 rounded-t-xs flex flex-col justify-between outline-none has-focus-visible:bg-white/10 transition-colors duration-300 ease-in-out motion-reduce:transition-none">
                 <Link
-                  id={`tab-${tabId}`}
+                  id={`tab-${destination.id}`}
                   role="tab"
                   aria-selected={destination.id === currentRouteId}
-                  aria-controls={`tabpanel-${tabId}`}
+                  aria-controls={`tabpanel-${destination.id}`}
                   to="/destination/$destinationId"
                   params={{ destinationId: destination.id }}
                   className={clsx(
@@ -57,10 +56,10 @@ const DestinationPage = ({
             ))}
           </ul>
           <div
-            id={`tabpanel-${tabId}`}
+            id={`tabpanel-${destination.id}`}
             role="tabpanel"
             tabIndex={0}
-            aria-labelledby={`tab-${tabId}`}
+            aria-labelledby={`tab-${destination.id}`}
             className="contents"
           >
             <div className="space-y-4 min-h-54 md:min-h-48.75 xl:min-h-63.5 ">
