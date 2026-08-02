@@ -56,9 +56,9 @@ const TechnologyPage = ({
             <p className="uppercase text-4-mobile md:text-4-tablet xl:text-4-desktop text-white opacity-50 font-bellefair">
               the terminology...
             </p>
-            <h1 className="uppercase text-3-mobile md:text-3-tablet xl:text-3-desktop text-white font-bellefair mt-4">
+            <h2 className="uppercase text-3-mobile md:text-3-tablet xl:text-3-desktop text-white font-bellefair mt-4">
               {technology.name}
-            </h1>
+            </h2>
           </hgroup>
           <p className="text-9-mobile md:text-9-tablet xl:text-9-desktop text-blue-300 font-barlow">
             {technology.description}

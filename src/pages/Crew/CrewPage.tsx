@@ -28,9 +28,9 @@ const CrewPage = ({
               <p className="uppercase text-4-mobile md:text-4-tablet xl:text-4-desktop text-white opacity-50 font-bellefair">
                 {crew.role}
               </p>
-              <h1 className="uppercase text-3-mobile md:text-3-tablet xl:text-3-desktop text-white font-bellefair mt-2 md:mt-4">
+              <h2 className="uppercase text-3-mobile md:text-3-tablet xl:text-3-desktop text-white font-bellefair mt-2 md:mt-4">
                 {crew.name}
-              </h1>
+              </h2>
             </hgroup>
             <p className="text-9-mobile md:text-9-tablet xl:text-9-desktop text-blue-300 font-barlow">
               {crew.bio}
