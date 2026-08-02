@@ -47,7 +47,6 @@ function RootComponent() {
           <Outlet />
         </main>
       </div>
-
       <TanStackRouterDevtools />
     </>
   );

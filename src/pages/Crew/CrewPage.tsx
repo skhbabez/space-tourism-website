@@ -37,9 +37,11 @@ const CrewPage = ({
             </p>
           </div>
           <DotsPagination className="xl:pb-12">
-            {crews.map((crew) => (
+            {crews.map((crew, idx) => (
               <DotsPaginatonLink
                 key={crew.id}
+                aria-current={currentRouteId == crew.id && "page"}
+                aria-label={`View ${crew.name} (${idx + 1} of ${crews.length})`}
                 selected={currentRouteId == crew.id}
                 to="/crew/$crewId"
                 params={{ crewId: crew.id }}

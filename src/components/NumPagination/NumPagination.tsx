@@ -40,7 +40,7 @@ const NumPaginationLink = createLink(
             className,
           )}
           {...props}
-        ></a>
+        />
       </li>
     );
   },

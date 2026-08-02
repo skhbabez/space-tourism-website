@@ -40,8 +40,10 @@ const TechnologyPage = ({
       </div>
       <div className="flex flex-col gap-10 xl:flex-row xl:gap-16 xl:w-full xl:min-w-158.75 items-center justify-between max-xl:max-w-lg min-h-80.75 md:min-h-87 xl:h-183.5 md:max-xl:gap-6  pt-10 xl:pt-0">
         <NumPagination>
-          {technologies.map((technology) => (
+          {technologies.map((technology, idx) => (
             <NumPaginationLink
+              aria-current={currentRouteId == technology.id && "page"}
+              aria-label={`View ${technology.name} (${idx + 1} of ${technologies.length})`}
               key={technology.id}
               selected={currentRouteId == technology.id}
               to="/technology/$technologyId"

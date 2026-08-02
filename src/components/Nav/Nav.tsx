@@ -125,6 +125,7 @@ const Nav = ({
       </NavList>
       <button
         ref={openButtonRef}
+        aria-label="open navigation"
         className="md:hidden [&:has(+div:popover-open)]:hidden"
         popoverTarget={popoverId}
         popoverTargetAction="show"
@@ -145,6 +146,7 @@ const Nav = ({
           <div className="py-8 px-6 text-white text-end">
             <button
               ref={closeButtonRef}
+              aria-label="close navigation"
               type="button"
               popoverTarget={popoverId}
               popoverTargetAction="hide"
